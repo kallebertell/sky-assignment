@@ -13,6 +13,7 @@ import com.sky.rewards.api.exception.InvalidAccountNumberException;
 public interface RewardsService {
 
 	/**
+	 * Lists any rewards a customer is eligible for by the given channel subscriptions
 	 * 
 	 * @param customerAccountNumber 
 	 * @param subscriptions 
