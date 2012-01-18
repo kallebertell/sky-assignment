@@ -1,2 +1,8 @@
 This project was created for Sky as part of their recruiting process.
 
+To build the project you'll need JDK 1.6, Apache Maven 3.x and Git
+
+git clone git@bitbucket.org:kallebertell/skyassignment.git
+cd skyassignment
+mvn clean install
+
