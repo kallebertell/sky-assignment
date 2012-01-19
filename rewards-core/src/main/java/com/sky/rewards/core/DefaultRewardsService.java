@@ -27,6 +27,9 @@ public class DefaultRewardsService implements RewardsService {
 	}
 	
 	public List<Reward> getRewards(String customerAccountNumber, Collection<ChannelSubscription> subscriptions) {
+		ensureNotNull("customerAccountNumber", customerAccountNumber);
+		ensureNotNull("subscriptions", subscriptions);
+		
 		List<Reward> rewards = rewardRepository.findBySubscriptions(subscriptions);
 		
 		Eligibility eligibility = null;
@@ -46,4 +49,9 @@ public class DefaultRewardsService implements RewardsService {
 		return new ArrayList<Reward>();
 	}
 
+	private void ensureNotNull(String paramName, Object param) {
+		if (param == null) {
+			throw new NullPointerException(paramName);
+		}
+	}
 }

@@ -85,4 +85,15 @@ public class DefaultRewardsServiceTest {
 		assertThat(rewards).isEmpty();
 	}
 	
+
+	@Test(expected=NullPointerException.class)
+	public void givenNullAccountNumberThrowsNullPointerException() {
+		rewardsService.getRewards(null, asList(REWARDABLE_CHANNEL_SUBSCRIPTION));
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void givenNullSubscriptionsThrowsNullPointerException() {
+		rewardsService.getRewards(ELIGIBLE_ACCOUNT_NUMBER, null);
+	}
+	
 }
